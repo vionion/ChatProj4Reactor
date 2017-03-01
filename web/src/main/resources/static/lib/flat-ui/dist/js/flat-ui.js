@@ -1528,7 +1528,7 @@ $.ui.position = {
  * http://api.jqueryui.com/button/
  *
  * Depends:
- *	jquery.ui.core.js
+ *	jquery.ui.web.js
  *	jquery.ui.widget.js
  */
 (function( $, undefined ) {
@@ -1924,7 +1924,7 @@ $.widget( "ui.buttonset", {
  * http://api.jqueryui.com/slider/
  *
  * Depends:
- *	jquery.ui.core.js
+ *	jquery.ui.web.js
  *	jquery.ui.mouse.js
  *	jquery.ui.widget.js
  */
@@ -3761,7 +3761,7 @@ $.fn.extend({
 			}
 
 			// If the element already has the correct final state, delegate to
-			// the core methods so the internal tracking of "olddisplay" works.
+			// the web methods so the internal tracking of "olddisplay" works.
 			if ( elem.is( ":hidden" ) ? mode === "hide" : mode === "show" ) {
 				elem[ mode ]();
 				done();

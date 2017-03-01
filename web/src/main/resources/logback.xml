@@ -4,13 +4,13 @@
     <!-- Appenders -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>[%t] %d %-5p [%c] %m%n</pattern>
+            <pattern>{WEB} [%t] %d %-5p [%c] %m%n</pattern>
         </encoder>
     </appender>
 
 
     <!-- application loggers -->
-    <logger name="com.tsybulko.chat" level="debug"/>
+    <logger name="com.tsybulko.chat.web" level="debug"/>
 
     <!-- 3rdparty Loggers -->
     <logger name="org.springframework" level="info"/>

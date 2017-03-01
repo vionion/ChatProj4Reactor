@@ -1,26 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Spring boot and Rethinkdb Chat</title>
-	<link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <title>Spring boot Chat</title>
+
+    <link href="lib/flat-ui/dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/flat-ui/dist/css/flat-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
 <div id="container">
-	<div id="chat">
-		<ul id="messages">
+    <div class="row">
+        <nav class="navbar navbar-inverse navbar-embossed">
+            <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                <h1>Chat 4 Reaktor</h1>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="logout">Logout (<span id="usernameHolder"></span>)</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <!--<div class="col-xs-4">-->
+        <!--<h4>Participants</h4>-->
+        <!--<div class="share">-->
+        <!--<ul>-->
+        <!--<li>-->
+        <!--<span class="input-icon fui-new"></span>-->
+        <!--<span class="input-icon fui-user"></span>-->
+        <!--</li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="col-xs-4">
+            <form class="form-signin">
+                <h3 class="form-signin-heading">Choose room</h3>
+                <div class="form-group-sm">
+                    <label for="chatroom" class="col-xs-3 control-label">Chatroom</label>
+                    <div class="col-xs-7">
+                        <select size="1" id="chatroom" class="form-control" onChange="javascript:changeRoom();">
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="chat" class="col-xs-8">
+            <ul id="messages">
 
-		</ul>
-		<form onsubmit="sendMessage(); return false;">
+            </ul>
+            <form onsubmit="sendMessage(); return false;">
 
-			<div class="chat-message clearfix">
-				<input name="message-to-send" autocomplete="off" id="messageInput" placeholder="Type your message" />
+                <div class="chat-message clearfix">
+                    <input name="message-to-send" autocomplete="off" id="messageInput" placeholder="Type your message"/>
 
-				<button type="submit">Send</button>
-			</div>
-		</form>
-	</div>
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 <script src="js/jquery/jquery-compat-3.0.0-alpha1.js"></script>
